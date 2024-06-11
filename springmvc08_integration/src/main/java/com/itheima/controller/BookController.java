@@ -25,12 +25,10 @@ public class BookController {
     }
 @GetMapping
     public List<BookEntity> getAll() {
-        bookService.getAll();
-        return null;
+    return bookService.getAll();
     }
     @GetMapping("/{id}")
     public BookEntity getByID(@PathVariable int id) {
-        int  i = 100/0;
         BookEntity bookEntity = bookService.getByID(id);
         return bookEntity;
     }
@@ -41,6 +39,5 @@ public class BookController {
     @PutMapping
     public boolean updateBook(@RequestBody BookEntity book) {
         return bookService.updateBook(book);
-
     }
 }

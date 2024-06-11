@@ -1,5 +1,8 @@
 package com.itheima.service.impl;
 
+import com.itheima.controller.BusinessException;
+import com.itheima.controller.ErrorCode;
+import com.itheima.controller.SystemException;
 import com.itheima.dao.BookDao;
 import com.itheima.entity.BookEntity;
 import com.itheima.service.BookService;
@@ -31,6 +34,16 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookEntity getByID(int id) {
+//            if(id == 1){
+//                throw new BusinessException("请不要用你的技术挑战我的耐心",ErrorCode.BUEINESS_ERROR);
+//            }
+//            try{
+//                int i = 100/0;
+//            }
+//            catch (ArithmeticException e){
+//                throw new SystemException("系统正在重试，请稍等",e,ErrorCode.SYSTEM_ERROR);
+//            }
+
         BookEntity bookEntity = bookDao.getByID(id);
         return bookEntity;
     }
